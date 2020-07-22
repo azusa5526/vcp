@@ -8,7 +8,7 @@
         <div class="product-wrap col-12 col-md-6">
           <div class="product-img">
             <div class="abs-wrap">
-              <img :src="product.imageUrl" alt />
+              <img class="zoomImg" :src="product.imageUrl" :data-zoom-image="product.imageUrl" alt />
             </div>
           </div>
         </div>
@@ -112,6 +112,14 @@
 </template>
 
 <script>
+import $ from 'jquery';
+
+$('.zoomImg').elevatezoom({
+  zoomType: 'inner',
+  zoomWindowFadeIn: 500,
+  zoomWindowFadeOut: 750
+});
+
 export default {
   data () {
     return {
