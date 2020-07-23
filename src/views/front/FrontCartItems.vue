@@ -103,9 +103,9 @@ export default {
 
   methods: {
     updateCart (cartItemId, productId, qty) {
+      const vm = this;
       const rmApi = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart/${cartItemId}`;
       const addApi = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart`;
-      const vm = this;
       const cart = {
         product_id: productId,
         qty
@@ -133,8 +133,8 @@ export default {
     },
 
     removeCartItem (id) {
-      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart/${id}`;
       const vm = this;
+      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart/${id}`;
       vm.isLoading = true;
 
       vm.$http.delete(api).then(response => {
@@ -150,8 +150,8 @@ export default {
     },
 
     addToCart (id, qty) {
-      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart`;
       const vm = this;
+      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart`;
       const cart = {
         product_id: id,
         qty
@@ -167,8 +167,8 @@ export default {
     },
 
     addCouponCode () {
-      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/coupon`;
       const vm = this;
+      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/coupon`;
       const coupon = {
         code: vm.couponCode
       };
@@ -187,8 +187,8 @@ export default {
     },
 
     getCart () {
-      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart`;
       const vm = this;
+      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart`;
       vm.isLoading = true;
 
       vm.$http.get(api).then(response => {

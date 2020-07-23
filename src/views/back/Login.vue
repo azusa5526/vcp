@@ -55,10 +55,11 @@ export default {
       isLoading: false
     };
   },
+
   methods: {
     signin () {
-      const api = `${process.env.API_PATH}/admin/signin`;
       const vm = this;
+      const api = `${process.env.API_PATH}/admin/signin`;
       vm.isLoading = true;
 
       vm.$http.post(api, vm.user).then(response => {

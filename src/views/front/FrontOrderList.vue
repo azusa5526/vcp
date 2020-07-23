@@ -18,7 +18,7 @@
           :class="{'is-invalid' : errors.has('tel')}"
           placeholder="PLEASE INPUT EMAIL"
         />
-        <span class="text-primary" v-if="errors.has('email')">{{ errors.first('email') }}</span>
+        <span class="text-primary" v-if="errors.has('email')">{{errors.first('email')}}</span>
       </div>
 
       <div class="form-group">
@@ -109,8 +109,8 @@ export default {
 
   methods: {
     createOrder () {
-      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/order`;
       const vm = this;
+      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/order`;
       const order = vm.form;
       vm.isLoading = true;
 

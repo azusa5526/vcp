@@ -68,7 +68,6 @@
       </div>
     </form>
 
-    <!-- Modal -->
     <div
       class="modal fade"
       id="paymentCompeleted"

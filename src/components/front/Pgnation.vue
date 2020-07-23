@@ -15,7 +15,7 @@
           class="page-item"
           v-for="page in pagination.total_pages"
           :key="page"
-          :class="{'active' : pagination.current_page == page}"
+          :class="{'active' : pagination.current_page === page}"
         >
           <a class="page-link" @click="changePage(page)">{{page}}</a>
         </li>

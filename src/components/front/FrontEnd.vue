@@ -12,7 +12,7 @@
   </div>
 </template>
 
-<script >
+<script>
 import FrontNavbar from './FrontNavbar';
 import FrontFooter from './FrontFooter';
 

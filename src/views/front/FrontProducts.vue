@@ -101,8 +101,8 @@ export default {
 
   methods: {
     getAllProducts () {
-      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/products/all`;
       const vm = this;
+      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/products/all`;
       vm.isLoading = true;
 
       vm.$http.get(api).then(response => {
@@ -112,8 +112,8 @@ export default {
     },
 
     getProduct (id) {
-      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/product/${id}`;
       const vm = this;
+      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/product/${id}`;
       vm.isLoading = true;
 
       localStorage.setItem(

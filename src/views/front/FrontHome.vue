@@ -99,7 +99,7 @@
           <div class="card bg-dark text-white">
             <div
               class="article-img"
-              :style="{ backgroundImage: 'url(' + require('@/assets/img/pc.jpg') + ')' }"
+              :style="{backgroundImage: 'url(' + require('@/assets/img/pc.jpg') + ')'}"
             ></div>
             <div class="card-img-overlay">
               <div class="article-content-wrap">
@@ -116,7 +116,7 @@
           <div class="card bg-dark text-white">
             <div
               class="article-img"
-              :style="{ backgroundImage: 'url(' + require('@/assets/img/radeon.jpg') + ')' }"
+              :style="{backgroundImage: 'url(' + require('@/assets/img/radeon.jpg') + ')'}"
             ></div>
             <div class="card-img-overlay">
               <div class="article-content-wrap">
@@ -150,8 +150,8 @@ export default {
 
   methods: {
     getAllProducts () {
-      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/products/all`;
       const vm = this;
+      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/products/all`;
       vm.isLoading = true;
 
       vm.$http.get(api).then(response => {
@@ -161,8 +161,8 @@ export default {
     },
 
     getProduct (id) {
-      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/product/${id}`;
       const vm = this;
+      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/product/${id}`;
       let heroProducts = vm.categoryFilterList();
 
       localStorage.setItem('cateFilteredList', JSON.stringify(heroProducts));

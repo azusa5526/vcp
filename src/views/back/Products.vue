@@ -46,7 +46,6 @@
 
     <Pagination :pagination="pagination" @changePage="getProducts"></Pagination>
 
-    <!-- update product modal -->
     <div
       class="modal fade"
       id="productModal"
@@ -199,7 +198,6 @@
       </div>
     </div>
 
-    <!-- delete product modal -->
     <div
       class="modal fade"
       id="delProductModal"
@@ -220,7 +218,7 @@
           </div>
           <div class="modal-body">
             DELETE
-            <strong class="text-danger">{{ tempProduct.title }}</strong> ( ITEM CANNOT BE RESTORE AFTER DELETION )
+            <strong class="text-danger">{{tempProduct.title}}</strong> ( ITEM CANNOT BE RESTORE AFTER DELETION )
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" @click="deleteProduct">ACCEPT</button>
@@ -257,8 +255,8 @@ export default {
 
   methods: {
     getProducts (page = 1) {
-      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/admin/products?page=${page}`;
       const vm = this;
+      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/admin/products?page=${page}`;
       vm.isLoading = true;
 
       vm.$http.get(api).then(response => {
@@ -285,9 +283,10 @@ export default {
     },
 
     updateProduct () {
+      const vm = this;
       let api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/admin/product`;
       let httpMethod = 'post';
-      const vm = this;
+
       vm.status.itemUpdating = true;
 
       if (!vm.isNew) {
@@ -325,8 +324,8 @@ export default {
     },
 
     uploadFile () {
-      const uploadedFile = this.$refs.files.files[0];
       const vm = this;
+      const uploadedFile = this.$refs.files.files[0];
       const formData = new FormData();
 
       formData.append('file-to-upload', uploadedFile);

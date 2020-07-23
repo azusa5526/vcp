@@ -7,7 +7,7 @@
       :key="i"
       style="border: #181818 1px solid;"
     >
-      {{ item.message }}
+      {{item.message}}
       <button
         type="button"
         class="close"

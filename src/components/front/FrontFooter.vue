@@ -6,7 +6,7 @@
           <h3>About VCP.com</h3>
           <p
             class="py-2"
-          >VCP.com is the leading tech-focused e-retailer in Taiwan, with a global reach in Europe, South America, Asia Pacific and the Middle East. Founded in 2020, the company offers its tens of millions of registered users a comprehensive selection of the latest consumer electronics, entertainment, smart home and gaming products.</p>
+          >VCP.com is the leading tech-focused e-retailer in Taiwan, with a global reach in Europe, South America, Asia Pacific and the Middle East. Founded in 2020, the company offers its tens of millions of registered users a comprehensive selection of the latest computer parts and gaming products.</p>
         </div>
 
         <div class="col-12 col-lg-6">
@@ -55,3 +55,11 @@
     </div>
   </footer>
 </template>
+
+<script>
+export default {
+  data () {
+    return {};
+  }
+};
+</script>

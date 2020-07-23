@@ -64,8 +64,8 @@ export default {
 
   methods: {
     getOrders (page = 1) {
-      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/admin/orders?page=${page}`;
       const vm = this;
+      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/admin/orders?page=${page}`;
       vm.isLoading = true;
 
       vm.$http.get(api).then(response => {

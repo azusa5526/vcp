@@ -8,7 +8,7 @@
         <div class="product-wrap col-12 col-md-6">
           <div class="product-img">
             <div class="abs-wrap">
-              <img class="zoomImg" :src="product.imageUrl" :data-zoom-image="product.imageUrl" alt />
+              <img class="zoomImg" :src="product.imageUrl" alt />
             </div>
           </div>
         </div>
@@ -46,14 +46,14 @@
                 class="btn btn-primary mr-1percent"
                 @click="addToCart(product.id, true, product.num)"
               >
-                <i class="fas fa-circle-notch fa-spin" v-if="clickedButton == 'direct'"></i> BUY NOW
+                <i class="fas fa-circle-notch fa-spin" v-if="clickedButton === 'direct'"></i> BUY NOW
               </button>
               <button
                 type="button"
                 class="btn btn-danger"
                 @click="addToCart(product.id, false, product.num)"
               >
-                <i class="fas fa-circle-notch fa-spin" v-if="clickedButton == 'non-direct'"></i> ADD TO CART
+                <i class="fas fa-circle-notch fa-spin" v-if="clickedButton === 'non-direct'"></i> ADD TO CART
               </button>
             </div>
           </div>
@@ -112,14 +112,6 @@
 </template>
 
 <script>
-import $ from 'jquery';
-
-$('.zoomImg').elevatezoom({
-  zoomType: 'inner',
-  zoomWindowFadeIn: 500,
-  zoomWindowFadeOut: 750
-});
-
 export default {
   data () {
     return {
@@ -170,8 +162,8 @@ export default {
     },
 
     getRecommandProduct (id) {
-      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/product/${id}`;
       const vm = this;
+      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/product/${id}`;
 
       vm.$http.get(api).then(response => {
         if (response.data.success) {
@@ -183,8 +175,8 @@ export default {
     },
 
     getCart () {
-      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart`;
       const vm = this;
+      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart`;
       vm.isLoading = true;
 
       vm.$http.get(api).then(response => {
@@ -194,8 +186,8 @@ export default {
     },
 
     addToCart (id, direct, qty = 1) {
-      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart`;
       const vm = this;
+      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart`;
       const cart = {
         product_id: id,
         qty
@@ -237,8 +229,8 @@ export default {
     },
 
     removeCartItem (id) {
-      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart/${id}`;
       const vm = this;
+      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart/${id}`;
       vm.isLoading = true;
 
       vm.$http.delete(api).then(response => {

@@ -43,7 +43,6 @@
 
     <Pagination :pagination="pagination" @changePage="getCoupons"></Pagination>
 
-    <!-- coupon modal -->
     <div
       class="modal fade"
       id="couponModal"
@@ -143,7 +142,6 @@
       </div>
     </div>
 
-    <!-- delete product modal -->
     <div
       class="modal fade"
       id="delCouponModal"
@@ -164,7 +162,7 @@
           </div>
           <div class="modal-body">
             DELETE
-            <strong class="text-danger">{{ tempCoupon.title }}</strong> ( COUPON CANNOT BE RESTORE AFTER DELETION )
+            <strong class="text-danger">{{tempCoupon.title}}</strong> ( COUPON CANNOT BE RESTORE AFTER DELETION )
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-third" data-dismiss="modal">CANCEL</button>
@@ -201,8 +199,8 @@ export default {
 
   methods: {
     getCoupons (page = 1) {
-      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/admin/coupons?page=${page}`;
       const vm = this;
+      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/admin/coupons?page=${page}`;
       vm.isLoading = true;
 
       vm.$http.get(api).then(response => {
@@ -229,9 +227,10 @@ export default {
     },
 
     updateCoupon () {
+      const vm = this;
       let api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/admin/coupon`;
       let httpMethod = 'post';
-      const vm = this;
+
       vm.status.itemUpdating = true;
 
       if (!vm.isNew) {
@@ -269,14 +268,14 @@ export default {
     },
 
     uploadFile () {
-      console.log(this);
-      const uploadedFile = this.$refs.files.files[0];
       const vm = this;
+      const uploadedFile = this.$refs.files.files[0];
       const formData = new FormData();
+      const url = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/admin/upload`;
 
       formData.append('file-to-upload', uploadedFile);
-      const url = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/admin/upload`;
       vm.status.fileUploading = true;
+
       vm.$http
         .post(url, formData, {
           headers: {
@@ -288,7 +287,7 @@ export default {
           if (response.data.success) {
             vm.$set(vm.tempCoupon, 'imageUrl', response.data.imageUrl);
           } else {
-            this.$bus.$emit('message:push', response.data.message, 'danger');
+            vm.$bus.$emit('message:push', response.data.message, 'danger');
           }
         });
     }

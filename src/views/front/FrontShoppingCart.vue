@@ -5,13 +5,13 @@
     <div class="container mt-4" v-if="cartHasItem">
       <div class="cart-wrap">
         <div class="shopping-step mb-4">
-          <div class="step" :class="{'active-step' : activedPage == 'FrontCartItems'}">
+          <div class="step" :class="{'active-step' : activedPage === 'FrontCartItems'}">
             <h5>CHECK CART</h5>
           </div>
-          <div class="step" :class="{'active-step' : activedPage == 'FrontOrderList'}">
+          <div class="step" :class="{'active-step' : activedPage === 'FrontOrderList'}">
             <h5>FILL INFO</h5>
           </div>
-          <div class="step" :class="{'active-step' : activedPage == 'FrontCheckout'}">
+          <div class="step" :class="{'active-step' : activedPage === 'FrontCheckout'}">
             <h5>PAYMENT LIST</h5>
           </div>
         </div>
@@ -50,8 +50,9 @@ export default {
 
   methods: {
     getCart () {
-      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart`;
       const vm = this;
+      const api = `${process.env.API_PATH}/api/${process.env.CUSTOM_PATH}/cart`;
+
       vm.isLoading = true;
 
       vm.$http.get(api).then(response => {
