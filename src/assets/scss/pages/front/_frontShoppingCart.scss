@@ -6,15 +6,18 @@
   @media screen and (max-width: 991px) {
     padding: 3rem 3rem;
   }
+
   @media screen and (max-width: 767px) {
     padding: 2rem 2.5rem;
   }
+
   @media screen and (max-width: 575px) {
     padding: 2rem 1.5rem;
   }
 
   table {
     color: $secondary;
+
     th {
       color: $primary;
       font-weight: normal;
@@ -26,7 +29,7 @@
     border-radius: 0;
   }
 
-  .input-group-append > .btn {
+  .input-group-append>.btn {
     border-radius: 0;
   }
 
@@ -44,8 +47,7 @@
       margin-left: 10px;
       margin-right: 10px;
       padding: 1rem;
-      background-color: $secondary;
-      color: $third;
+      color: $secondary;
       justify-content: center;
       align-items: center;
 
@@ -64,8 +66,7 @@
     }
 
     .active-step {
-      background-color: $primary;
-      color: $third;
+      color: $primary;
     }
   }
 

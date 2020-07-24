@@ -6,13 +6,22 @@
       <div class="cart-wrap">
         <div class="shopping-step mb-4">
           <div class="step" :class="{'active-step' : activedPage === 'FrontCartItems'}">
-            <h5>CHECK CART</h5>
+            <h5>
+              CHECK CART
+              <i class="fas fa-search ml-1"></i>
+            </h5>
           </div>
           <div class="step" :class="{'active-step' : activedPage === 'FrontOrderList'}">
-            <h5>FILL INFO</h5>
+            <h5>
+              FILL INFO
+              <i class="fas fa-pen-nib ml-1"></i>
+            </h5>
           </div>
           <div class="step" :class="{'active-step' : activedPage === 'FrontCheckout'}">
-            <h5>PAYMENT LIST</h5>
+            <h5>
+              PAYMENT LIST
+              <i class="fas fa-credit-card ml-1"></i>
+            </h5>
           </div>
         </div>
 
