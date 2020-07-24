@@ -53,7 +53,7 @@
         <div class="row justify-content-center">
           <Pgnation
             v-if="filteredProducts.length !== 0"
-            class="mt-4"
+            class="my-4"
             :pagination="pgnation"
             @changePage="changeCurrentPage"
           ></Pgnation>

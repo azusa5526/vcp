@@ -2,13 +2,13 @@
   <div>
     <nav aria-label="Page navigation">
       <ul class="pagination">
-        <li class="page-item" :class="{'disabled' : !pagination.has_pre}">
+        <li :class="{'disabled' : !pagination.has_pre}">
           <a
             class="page-link"
             aria-label="Previous"
             @click="changePage(pagination.current_page - 1)"
           >
-            <span aria-hidden="true">&laquo;</span>
+            <i class="fas fa-angle-left" />
           </a>
         </li>
         <li
@@ -19,9 +19,9 @@
         >
           <a class="page-link" @click="changePage(page)">{{page}}</a>
         </li>
-        <li class="page-item" :class="{'disabled' : !pagination.has_next}">
+        <li :class="{'disabled' : !pagination.has_next}">
           <a class="page-link" aria-label="Next" @click="changePage(pagination.current_page + 1)">
-            <span aria-hidden="true">&raquo;</span>
+            <i class="fas fa-angle-right" />
           </a>
         </li>
       </ul>

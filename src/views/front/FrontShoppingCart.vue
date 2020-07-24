@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <loading :active.sync="isLoading"></loading>
 
-    <div class="container mt-4" v-if="cartHasItem">
+    <div class="container my-4" v-if="cartHasItem">
       <div class="cart-wrap">
         <div class="shopping-step mb-4">
           <div class="step" :class="{'active-step' : activedPage === 'FrontCartItems'}">

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="d-flex flex-column min-vh-full">
     <FrontNavbar></FrontNavbar>
 
     <div class="container-fluid px-0">
@@ -8,7 +8,7 @@
       </main>
     </div>
 
-    <FrontFooter class="mt-4"></FrontFooter>
+    <FrontFooter class="mt-auto"></FrontFooter>
   </div>
 </template>
 

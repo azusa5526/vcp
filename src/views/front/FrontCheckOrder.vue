@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-4">
+  <div class="container my-4">
     <loading :active.sync="isLoading"></loading>
 
     <div class="trace-order-wrap">

@@ -23,11 +23,14 @@
 
           <div class="product-price d-flex justify-content-between align-items-baseline">
             <div
-              class="h4 text-danger mb-0"
+              class="h4 text-fourth-dark mb-0"
               v-if="!product.price"
             >{{product.origin_price | currency}}</div>
             <del class="h5 mb-0" v-if="product.price">{{product.origin_price | currency}}</del>
-            <div class="h4 text-danger mr-2 mb-0" v-if="product.price">{{product.price | currency}}</div>
+            <div
+              class="h4 text-fourth-dark mr-2 mb-0"
+              v-if="product.price"
+            >{{product.price | currency}}</div>
           </div>
 
           <pre class="product-content">{{product.content}}</pre>
@@ -50,7 +53,7 @@
               </button>
               <button
                 type="button"
-                class="btn btn-danger"
+                class="btn btn-fourth-dark"
                 @click="addToCart(product.id, false, product.num)"
               >
                 <i class="fas fa-circle-notch fa-spin" v-if="clickedButton === 'non-direct'"></i> ADD TO CART

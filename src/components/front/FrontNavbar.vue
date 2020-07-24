@@ -35,7 +35,7 @@
           </router-link>
         </li>
         <li>
-          <a class="text-light-danger nav-link mr-1" href="#" v-if="is_login" @click="signOut">
+          <a class="text-fourth nav-link mr-1" href="#" v-if="is_login" @click="signOut">
             SIGN OUT
             <i class="fas fa-sign-out-alt ml-1"></i>
           </a>

@@ -37,7 +37,7 @@
           <td class="align-middle">
             <button
               type="button"
-              class="btn btn-outline-danger btn-sm"
+              class="btn btn-outline-danger-light btn-sm"
               @click="removeCartItem(item.id)"
             >
               <i class="far fa-trash-alt"></i>
@@ -75,7 +75,7 @@
 
     <div class="d-flex justify-content-between mt-4 step-control">
       <router-link class="btn btn-primary" to="/frontProducts/all">BACK TO SHOP</router-link>
-      <router-link class="btn btn-danger" to="front_orderlist" v-if="cartHasItem">FILL INFO</router-link>
+      <router-link class="btn btn-fourth-dark" to="front_orderlist" v-if="cartHasItem">FILL INFO</router-link>
     </div>
   </div>
 </template>

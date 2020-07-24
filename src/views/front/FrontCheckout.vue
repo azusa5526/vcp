@@ -58,13 +58,13 @@
             <th>PAYMENT STATUS</th>
             <td>
               <span class="text-success" v-if="order.is_paid">PAID</span>
-              <span class="text-light-danger" v-else>OUTSTANDING PAYMENT</span>
+              <span class="text-danger-light" v-else>OUTSTANDING PAYMENT</span>
             </td>
           </tr>
         </tbody>
       </table>
       <div class="text-right">
-        <button class="btn btn-danger" v-if="!order.is_paid">PAY ORDER</button>
+        <button class="btn btn-primary" v-if="!order.is_paid">PAY ORDER</button>
       </div>
     </form>
 

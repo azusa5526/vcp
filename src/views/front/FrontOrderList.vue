@@ -18,7 +18,7 @@
           :class="{'is-invalid' : errors.has('tel')}"
           placeholder="PLEASE INPUT EMAIL"
         />
-        <span class="text-primary" v-if="errors.has('email')">{{errors.first('email')}}</span>
+        <span class="text-danger-light" v-if="errors.has('email')">{{errors.first('email')}}</span>
       </div>
 
       <div class="form-group">
@@ -33,7 +33,7 @@
           :class="{'is-invalid' : errors.has('name')}"
           placeholder="INPUT NAME"
         />
-        <span class="text-primary" v-if="errors.has('name')">NAME MUST BE INPUT</span>
+        <span class="text-danger-light" v-if="errors.has('name')">NAME MUST BE INPUT</span>
       </div>
 
       <div class="form-group">
@@ -48,7 +48,7 @@
           :class="{'is-invalid' : errors.has('tel')}"
           placeholder="PLEASE INPUT PHONE NUMBER"
         />
-        <span class="text-primary" v-if="errors.has('tel')">PHONE NUMBER MUST BE INPUT</span>
+        <span class="text-danger-light" v-if="errors.has('tel')">PHONE NUMBER MUST BE INPUT</span>
       </div>
     </form>
 
@@ -69,7 +69,7 @@
           :class="{'is-invalid' : errors.has('address')}"
           placeholder="PLEASE INPUT ADDRESS"
         />
-        <span class="text-primary" v-if="errors.has('address')">ADDRESS MUST BE INPUT</span>
+        <span class="text-danger-light" v-if="errors.has('address')">ADDRESS MUST BE INPUT</span>
       </div>
 
       <div id="twzipcode"></div>
@@ -83,7 +83,7 @@
 
       <div class="d-flex justify-content-between step-control">
         <router-link class="btn btn-primary" to="front_cart_items">BACK TO CART</router-link>
-        <button class="btn btn-danger" @click.prevent="createOrder">SEND ORDER</button>
+        <button class="btn btn-fourth-dark" @click.prevent="createOrder">SEND ORDER</button>
       </div>
     </form>
   </div>
